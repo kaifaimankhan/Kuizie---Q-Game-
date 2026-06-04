@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kuizie Q</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- MUSIC -->
+
+    <audio id="bgMusic" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=gaming-music-6688.mp3">
+    </audio>
+
+    <audio id="correctSound">
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4e3fa0db2f.mp3?filename=correct-2-46134.mp3">
+    </audio>
+
+    <audio id="wrongSound">
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_d1718ab41b.mp3?filename=wrong-answer-129254.mp3">
+    </audio>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+
+            <div class="logo-box">
+                🎯
+            </div>
+
+            <h1>Kuizie Q</h1>
+
+        </div>
+
+        <div class="navbar">
+
+            <div class="nav-card">
+
+                <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="avatar">
+
+                <div>
+                    <small>Player</small>
+                    <p id="playerDisplay">Guest</p>
+                </div>
+
+            </div>
+
+            <div class="nav-card">
+                🏆 Last Score :
+                <span id="lastScore">0</span>
+            </div>
+
+            <div class="nav-card">
+                ⚡ Level :
+                <span id="levelDisplay">Easy</span>
+            </div>
+
+            <div class="nav-card help-btn" id="helpBtn">
+                ❓ Help
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- MAIN -->
+
+    <main>
+
+        <div class="quiz-container">
+
+            <!-- START SCREEN -->
+
+            <div class="start-screen" id="startScreen">
+
+                <h2>Welcome To Kuizie Q</h2>
+
+                <p>
+                    Ultimate Comic Style Quiz Game 🚀
+                </p>
+
+                <div class="input-group">
+
+                    <input type="text" id="playerName" placeholder="Enter Your Name">
+
+                </div>
+
+                <div class="input-group">
+
+                    <select id="levelSelect">
+
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+
+                    </select>
+
+                </div>
+
+                <button id="startBtn">
+                    Start Game 🚀
+                </button>
+
+            </div>
+
+            <!-- QUIZ SCREEN -->
+
+            <div class="quiz-screen" id="quizScreen">
+
+                <div class="top-bar">
+
+                    <div class="question-count" id="questionCount">
+                        Question 1 / 15
+                    </div>
+
+                    <div class="timer">
+                        ⏳ <span id="timer">40</span>s
+                    </div>
+
+                </div>
+
+                <h2 id="question"></h2>
+
+                <img id="questionImage">
+
+                <div class="options" id="options"></div>
+
+                <button id="nextBtn">
+                    Next Question →
+                </button>
+
+            </div>
+
+            <!-- RESULT -->
+
+            <div class="result-screen" id="resultScreen">
+
+                <h2>🎉 Quiz Completed</h2>
+
+                <div class="score-box">
+
+                    <h1 id="finalScore">
+                        0 / 15
+                    </h1>
+
+                    <p id="resultText"></p>
+
+                    <br>
+
+                    <h3 id="highScoreText"></h3>
+
+                </div>
+
+                <button onclick="location.reload()" id="restartBtn">
+                    Play Again 🔥
+                </button>
+
+                <!-- DID YOU KNOW -->
+
+                <div class="did-you-know" id="didYouKnow">
+
+                    <h2>📚 Did You Know?</h2>
+
+                    <div id="factsContainer"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Kuizie Q | All Rights Reserved
+        </p>
+
+        <br>
+
+        <p>
+
+            Follow Me On Instagram :
+
+            <a href="https://www.instagram.com/_.kaiffff____?igsh=MWc4dTVtMmZiamlqeg==" target="_blank">
+                @_kaiffff____
+            </a>
+
+        </p>
+
+    </footer>
+
+    <!-- POPUP -->
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="popup" id="popup">
+
+        <h2>🎮 How To Play?</h2>
+
+        <br>
+
+        <p>
+
+            • Enter your name <br><br>
+            • Select level <br><br>
+            • 40 second timer <br><br>
+            • 15 questions each level <br><br>
+            • Questions shuffle every retry 🔥
+
+        </p>
+
+        <button id="closePopup">
+            Close
+        </button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
